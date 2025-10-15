@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Datang di Himpunan Kami</title>
+
+    <style>
+        body {
+            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            font-size: 18px;
+            background: linear-gradient(to right, #f8fafc, #f1f5f9);
+            color: #333;
+            scroll-behavior: smooth;
+            background-image: url(./assets/bg-body.jpg);
+        }
+
+        /* Navigasi */
+        header {
+            background: linear-gradient(135deg, #000000, #505050);
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        nav .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 10px 16px;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background-color: #facc15;
+            color: #111827;
+        }
+
+        /* Bagian Utama */
+        main {
+            padding-top: 80px;
+        }
+
+        section {
+            padding: 80px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Halaman Utama (Hero) */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+            color: #fff;
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1.5s ease;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes infinite-scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .kakak-pamong img {
+
+            justify-content: baseline;
+            border-radius: 50%;
+            width: 15vw;
+            height: 30vh;
+            object-fit: cover;
+            margin: 10px;
+        }
+
+        .kakak-pamong img:hover {
+            background-color: #facc15;
+
+        }
+
+        .kredit-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100vw;
+            margin-top: 100px;
+        }
+
+        .scroll {
+            display: flex;
+            gap: 20px;
+            animation: infinite-scroll 15s linear infinite;
+        }
+
+        .kredit-container .kredit {
+            background-color: black;
+            border-radius: 50%;
+            width: 15vw;
+            height: 30vh;
+            object-fit: cover;
+        }
+
+        /* Bagian Pimpinan */
+        #pimpinan {
+            background-color: #fff;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 90px;
+            height: 5px;
+            background: #facc15;
+            margin: 15px auto 0;
+            border-radius: 5px;
+        }
+
+        .pimpinan-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .pimpinan-card {
+            background: #f9fafb;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            width: 280px;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .pimpinan-card:hover {
+            transform: translateY(-14px) scale(1.05);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        .pimpinan-card img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 18px;
+            transition: transform 0.3s;
+        }
+
+        .pimpinan-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .pimpinan-card h3 {
+            margin-bottom: 12px;
+        }
+
+        /* Bagian Divisi */
+        .divisi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 45px;
+            text-align: left;
+        }
+
+        .divisi-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, background 0.3s;
+        }
+
+        .divisi-card:hover {
+            transform: translateY(-12px) scale(1.04);
+            background: #d9d9d9;
+        }
+
+        .divisi-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .divisi-card h3 {
+            color: #333;
+            border-left: 5px solid #facc15;
+            padding-left: 12px;
+        }
+
+        .divisi-card img {
+            transition: transform 0.3s;
+        }
+
+        .divisi-card:hover img {
+            transform: scale(1.1);
+            /* transform: translateY(-14px) scale(1.05); */
+        }
+
+        /* Bagian Visi Misi */
+        #visimisi {
+            background: #fff;
+            padding: 90px 25px;
+        }
+
+        #visimisi h2 {
+            font-size: 2.8rem;
+            margin-bottom: 35px;
+        }
+
+        .visi,
+        .misi {
+            background: #f9fafb;
+            margin: 25px auto;
+            padding: 30px;
+            max-width: 850px;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .visi h3,
+        .misi h3 {
+            color: #facc15;
+            margin-bottom: 18px;
+        }
+
+        .misi ul {
+            list-style: disc;
+            padding-left: 25px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #000000, #505050);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 1rem;
+            box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#utama">HIMPUNAN MAHASISWA JURUSAN</a>
+            </div>
+            <ul>
+                <li><a href="#utama">Utama</a></li>
+                <li><a href="#pimpinan">Pimpinan</a></li>
+                <li><a href="#divisi">Divisi</a></li>
+                <li><a href="#visimisi">Visi Misi</a></li>
+                <li><a href="#ourpamong">Kredit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="utama" class="hero">
+            <div class="hero-content">
+                <img src="./assets/bg-himpunan.jpg" alt="Foto Himpunan" class="hero-img-explore"
+                    style="max-width: 100%; max-height: 100%; border-radius: 20px; margin-bottom: 28px; box-shadow: 0 6px 28px rgba(0,0,0,0.35); cursor: pointer; object-fit: cover;"
+                    onclick="window.open(this.src, '_blank')">
+                <h1>Selamat Datang di Himpunan Kami!</h1>
+                <p>Sebuah wadah untuk berkumpul, belajar, dan bertumbuh bersama demi kemajuan daerah kita.</p>
+            </div>
+        </section>
+
+        <section id="pimpinan">
+            <h2>Bupati & Wakil Bupati Himpunan</h2>
+            <div class="pimpinan-container">
+                <div class="pimpinan-card">
+                    <img src="./assets/kahim.jpg" alt="Foto Bupati Himpunan" onclick="window.open(this.src,'_blank')">
+                    <h3>Irvanda Anggun Satria</h3>
+                    <p>Seorang pemimpin himpunan atau orang yang bertugas untuk bertanggung jawab atas segala hal yang
+                        dilakukan anggotanya.</p>
+                </div>
+                <div class="pimpinan-card">
+                    <img src="./assets/wakahim.jpg" alt="Foto Wakil Bupati Himpunan"
+                        onclick="window.open(this.src,'_')">
+                    <h3>Vanessa H.V Amuntoda</h3>
+                    <p>Seorang yang menggantikan peran bupati ketika bupati berhalangan selebihnya wakil bupati berperan
+                        sebagai pengawas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="divisi">
+            <h2>Struktur Divisi</h2>
+            <div class="divisi-container">
+                <div class="divisi-card">
+                    <img src="./assets/inti.jpg" alt="Foto Inti"
+                        style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:12px;"
+                        onclick="window.open(this.src,'_')" />
+                    <h3>Pengurus Inti</h3>
+                    <p>Bertanggung jawab atas pengelolaan dan pemeliharaan seluruh aset dan fasilitas yang dimiliki oleh
+                        himpunan.</p>
+                </div>
+                <div class="divisi-card">
+                    <img src="./assets/sarpras.jpg" alt="Foto Sarpras"
+                        style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:12px;"
+                        onclick="window.open(this.src,'_')" />
+                    <h3>Sarana & Prasarana (Sarpras)</h3>
+                    <p>Devisi yang bertanggung jawab atas sarana dan prasarana yang ada dihimpunan, dan setiap kegiatan
+                        tentu harus mendapat persetujuan
+                        dari sarpras.</p>
+                </div>
+                <div class="divisi-card">
+                    <img src="./assets/pendidikan.jpg" alt="Foto Pendidikan"
+                        style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:12px;"
+                        onclick="window.open(this.src,'_')" />
+                    <h3>Pendidikan</h3>
+                    <p>Devisi yang berperan dalam minat bakat mahasiswa terutama di bidang akademik dan orang yang
+                        terjun langsung apabila mahasiswa sedang ada masalah dengan perkuliahan.</p>
+                </div>
+                <div class="divisi-card">
+                    <img src="./assets/danus.jpg" alt="Foto Danus"
+                        style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:12px;"
+                        onclick="window.open(this.src,'_')" />
+                    <h3>Dana & Usaha (Danus)</h3>
+                    <p>Devisi yang berperan tentang masalah pencarian dan pengalangan dana untuk himpunan tetapi untuk
+                        masalah ini tentu seluruh anggota dan mahasiswa ikut didalam kegiatan yang dibuat
+                        oleh usaha dana.</p>
+                </div>
+                <div class="divisi-card">
+                    <img src="./assets/humas.jpg" alt="Foto Humas"
+                        style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:12px;"
+                        onclick="window.open(this.src,'_')" />
+                    <h3>Hubungan Masyarakat (Humas)</h3>
+                    <p>Devisi yang berperan tentang pengenalan himpunan atau jurusan bisa disebut juga humas adalah
+                        wartawan himpunan karena berbagai informasi datang dari humas.</p>
+                </div>
+                <div class="divisi-card">
+                    <img src="./assets/sosbud.jpg" alt="Foto sosbud"
+                        style="width:130px;height:130px;border-radius:50%;object-fit:cover;margin-bottom:12px;"
+                        onclick="window.open(this.src,'_')" />
+                    <h3>Sosial Budaya dan Keagamaan</h3>
+                    <p>Devisi yang berperan tentang kegiatan keagamaan dan hari-hari besar agama.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="visimisi">
+            <h2>Visi & Misi Himpunan</h2>
+            <div class="visi">
+                <h2>Visi</h2>
+                <p>menjadikan HIMASI unmus sebagai wadah pengembangan profisonalisme dan rasa tanggung jawab yang mampu
+                    bekerjasama, kompak, kreatif, produktif, dan berintegritas</p>
+            </div>
+            <div class="misi">
+                <h2>Misi</h2>
+                <ul>
+                    <li>Membangun kebersamaan dan kekeluargaan di kalangan anggota himpunan mahasiswa sistem
+                        informasi universitas Musamus
+                    </li>
+                    <li>Mengoptimalkan kinerja himpunan mahasiswa sistem informasi dengan budaya organisasi yang selalu
+                        berkembang mendukung dan mengevaluasi kerja anggotanya.</li>
+                    <li>Menjalin kerjasama dengan berbagai pihak baik external dan internal universitas Musamus Merauke.
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <section id="ourpamong">
+        <h1>PENDAMPING PAMONG: </h1>
+        <div class="kakak-pamong">
+            <img src="./assets/pendamping/febrian.jpg" class="kredit">
+            <img src="./assets/pendamping/tasya.jpg" class="kredit">
+        </div>
+
+        <h1>DEVELOPERS: </h1>
+        <div class="kredit-container">
+            <div class="scroll">
+                <img src="./assets/developer/pasha.jpg" class="kredit">
+                <img src="./assets/developer/tina.jpg" class="kredit">
+                <img src="./assets/developer/aan.jpg" class="kredit">
+                <img src="./assets/developer/ani.jpg" class="kredit">
+                <img src="./assets/developer/fatur.jpg" class="kredit">
+                <img src="./assets/developer/mudmah.jpg" class="kredit">
+                <img src="./assets/developer/rozaq.jpg" class="kredit">
+                <img src="./assets/developer/fahri.jpg" class="kredit">
+                <img src="./assets/developer/michael.jpg" class="kredit">
+                <img src="./assets/developer/rimba.jpg" class="kredit">
+                <img src="./assets/kahim.jpg" class="kredit">
+                <img src="./assets/kahim.jpg" class="kredit">
+                <!-- duplikat -->
+                <img src="./assets/developer/pasha.jpg" class="kredit">
+                <img src="./assets/developer/tina.jpg" class="kredit">
+                <img src="./assets/developer/aan.jpg" class="kredit">
+                <img src="./assets/developer/ani.jpg" class="kredit">
+                <img src="./assets/developer/fatur.jpg" class="kredit">
+                <img src="./assets/developer/mudmah.jpg" class="kredit">
+                <img src="./assets/developer/rozaq.jpg" class="kredit">
+                <img src="./assets/developer/fahri.jpg" class="kredit">
+                <img src="./assets/developer/michael.jpg" class="kredit">
+                <img src="./assets/developer/rimba.jpg" class="kredit">
+                <img src="./assets/kahim.jpg" class="kredit">
+                <img src="./assets/kahim.jpg" class="kredit">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; INSYM 25 Connecting People For The World.</p>
+    </footer>
+
+    <script>
+        // Script untuk navigasi smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Script untuk animasi saat scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const cards = document.querySelectorAll('.divisi-card');
+        cards.forEach((card) => {
+            observer.observe(card);
+        });
+
+    </script>
+</body>
+
+</html>
